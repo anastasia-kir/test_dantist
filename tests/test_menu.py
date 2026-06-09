@@ -8,10 +8,9 @@ def test_menu():
 
         page.goto("https://dantist8.ru/", wait_until="domcontentloaded")
 
-        # ждём загрузку страницы чуть-чуть
+        # ожидаем загрузку страницы
         page.wait_for_timeout(2000)
 
-        # проверяем реальные пункты меню по тексту
         assert (
             page.locator("text=Услуги").count() > 0 or
             page.locator("text=Врачи").count() > 0 or
